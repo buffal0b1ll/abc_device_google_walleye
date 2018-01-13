@@ -105,3 +105,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # ModemService
 PRODUCT_COPY_FILES += \
   device/google/walleye/modemservice.xml:system/etc/sysconfig/modemservice.xml
+  
+# Privileged app permissions
+PRODUCT_COPY_FILES += \
+    device/google/walleye/privapp-permissions-walleye.xml:system/etc/permissions/privapp-permissions-walleye.xml
