@@ -162,3 +162,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # NFC/camera interaction workaround - DO NOT COPY TO NEW DEVICES
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1
+
+# ModemService
+PRODUCT_COPY_FILES += \
+  device/google/taimen/modemservice.xml:system/etc/sysconfig/modemservice.xml
+
