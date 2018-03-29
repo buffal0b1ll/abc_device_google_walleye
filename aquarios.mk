@@ -43,3 +43,7 @@ PRODUCT_PACKAGES += \
     vndk_package
 
 PRODUCT_RESTRICT_VENDOR_FILES := false
+
+# Boot animation resolution
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
