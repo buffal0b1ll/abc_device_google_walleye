@@ -41,3 +41,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     vndk_package
+
+PRODUCT_RESTRICT_VENDOR_FILES := false
