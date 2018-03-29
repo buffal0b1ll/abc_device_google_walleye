@@ -23,8 +23,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Call some device specific files for taimen
-$(call inherit-product, device/google/muskie/device.mk)
-$(call inherit-product, device/google/muskie/device-walleye.mk)
+$(call inherit-product, device/google/walleye/device.mk)
+$(call inherit-product, device/google/walleye/device-walleye.mk)
 $(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
 
@@ -33,7 +33,7 @@ $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
 
 # Audio effects
 PRODUCT_COPY_FILES += \
-    device/google/muskie/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    device/google/walleye/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 # Include AmbientSense if it's available
 -include vendor/ambientmusic/AmbientMusic.m

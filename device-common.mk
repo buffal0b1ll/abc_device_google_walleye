@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/google/muskie
+LOCAL_PATH := device/google/walleye
 
 # Audio XMLs
 PRODUCT_COPY_FILES += \
@@ -145,15 +145,15 @@ BOARD_VENDOR_KERNEL_MODULES += \
 endif
 
 PRODUCT_COPY_FILES += \
-    device/google/muskie/nfc/libnfc-nxp.muskie.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+    device/google/walleye/nfc/libnfc-nxp.walleye.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 PRODUCT_COPY_FILES += \
-    device/google/muskie/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
-    device/google/muskie/thermal-engine-vr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-vr.conf
+    device/google/walleye/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
+    device/google/walleye/thermal-engine-vr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-vr.conf
 
 # Wifi configuration file
 PRODUCT_COPY_FILES += \
-    device/google/muskie/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+    device/google/walleye/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 #IMU calibration
 PRODUCT_PROPERTY_OVERRIDES += \
