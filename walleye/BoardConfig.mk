@@ -17,6 +17,14 @@
 TARGET_BOOTLOADER_BOARD_NAME := walleye
 DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x00000056
 
+BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 earlycon=msm_serial_dm,0xc1b0000
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := clang-stable
+TARGET_KERNEL_SOURCE := kernel/google/wahoo
+TARGET_KERNEL_CONFIG := custom_defconfig
+TARGET_KERNEL_ARCH := arm64
+BOARD_KERNEL_IMAGE_NAME := Image.lz4-dtb
+
 include device/google/wahoo/BoardConfig.mk
 -include vendor/google_devices/walleye/proprietary/BoardConfigVendor.mk
 
