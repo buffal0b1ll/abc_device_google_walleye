@@ -16,14 +16,12 @@
 
 # Include aquarios phone config
 include vendor/aquarios/configs/aquarios_phone.mk
-include vendor/aquarios/products/walleye.mk
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Call some device specific files for taimen
-$(call inherit-product, device/google/walleye/device.mk)
 $(call inherit-product, device/google/walleye/device-walleye.mk)
 $(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)

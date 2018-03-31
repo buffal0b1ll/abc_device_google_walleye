@@ -78,7 +78,7 @@ PRODUCT_COPY_FILES += \
 include device/google/wahoo/device.mk
 
 PRODUCT_COPY_FILES += \
-    device/google/walleye/nfc/libnfc-nxp.walleye.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+    device/google/walleye/nfc/libnfc-nxp.muskie.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 PRODUCT_COPY_FILES += \
     device/google/walleye/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
@@ -98,5 +98,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ModemService
 PRODUCT_COPY_FILES += \
-  device/google/taimen/modemservice.xml:system/etc/sysconfig/modemservice.xml
+  device/google/walleye/modemservice.xml:system/etc/sysconfig/modemservice.xml
 
