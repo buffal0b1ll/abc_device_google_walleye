@@ -83,5 +83,3 @@ lib/librcc.so
 -priv-app/SprintDM/SprintDM.apk
 -priv-app/SprintHM/SprintHM.apk
 -priv-app/VzwOmaTrigger/VzwOmaTrigger.apk;PRESIGNED
-
-
