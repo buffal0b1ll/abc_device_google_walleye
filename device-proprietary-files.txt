@@ -1,3 +1,7 @@
+# Camera
+etc/permissions/com.google.android.camera.experimental2017.xml
+-framework/com.google.android.camera.experimental2017.jar|e26822c377e022c5848bc3c927e7a44a
+
 # CNE
 etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
@@ -21,6 +25,8 @@ etc/permissions/features-verizon.xml
 etc/permissions/obdm_permissions.xml
 etc/permissions/privapp-permissions-wahoo.xml
 etc/permissions/vzw_mvs_permissions.xml
+etc/permissions/com.android.ims.rcsmanager.xml
+etc/permissions/com.android.vzwomatrigger.xml
 
 # Jars
 -framework/cneapiclient.jar;PRESIGNED
@@ -28,7 +34,8 @@ etc/permissions/vzw_mvs_permissions.xml
 -framework/com.quicinc.cne.jar;PRESIGNED
 -framework/embmslibrary.jar;PRESIGNED
 -framework/rcsimssettings.jar;PRESIGNED
--framework/vendor.qti.qcril.am-V1.0-java.jar
+# -framework/vendor.qti.qcril.am-V1.0-java.jar
+-framework/qcrilhook.jar
 -framework/VerizonUnifiedSettings.jar;PRESIGNED
 
 # Lib64
@@ -63,6 +70,7 @@ lib/librcc.so
 -app/Tycho/Tycho.apk;PRESIGNED
 -app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
 -app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
+-app/EaselServicePrebuilt/EaselServicePrebuilt.apk
 
 # Priv-app
 -priv-app/CarrierServices/CarrierServices.apk;PRESIGNED
@@ -83,3 +91,15 @@ lib/librcc.so
 -priv-app/SprintDM/SprintDM.apk
 -priv-app/SprintHM/SprintHM.apk
 -priv-app/VzwOmaTrigger/VzwOmaTrigger.apk;PRESIGNED
+-priv-app/AmbientSensePrebuilt/AmbientSensePrebuilt.apk;PRESIGNED
+
+#vendor/app - move to below locations manually after extracting factory zip
+#dirty hack before I knew we could use : and specify destination #justanothernoob
+#cp -r vendor/app/wahoo_gfxdrv system/priv-app/wahoo_gfxdrv
+#cp -r vendor/app/QtiTelephonyService system/app/QtiTelephonyService
+-app/QtiTelephonyService/QtiTelephonyService.apk;PRESIGNED
+-priv-app/wahoo_gfxdrv/wahoo_gfxdrv.apk;
+
+#ambient
+etc/ambient/matcher_tah.leveldb
+
