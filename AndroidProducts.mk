@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/nitrogen_walleye.mk
+    $(LOCAL_DIR)/havoc_walleye.mk

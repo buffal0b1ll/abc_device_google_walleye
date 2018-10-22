@@ -16,8 +16,8 @@
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-# Inherit Nitrogen OS product configuration
-$(call inherit-product, vendor/nitrogen/products/common.mk)
+# Inherit some common Havoc stuff.
+$(call inherit-product, vendor/havoc/config/common.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -37,7 +37,7 @@ PRODUCT_COPY_FILES += \
 -include vendor/ambientmusic/AmbientMusic.mk
 
 # Override AOSP build properties
-PRODUCT_NAME := nitrogen_walleye
+PRODUCT_NAME := havoc_walleye
 PRODUCT_DEVICE := walleye
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Pixel 2

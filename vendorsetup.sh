@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo nitrogen_walleye-userdebug
-add_lunch_combo nitrogen_walleye-eng
+add_lunch_combo havoc_walleye-userdebug
+add_lunch_combo havoc_walleye-eng
