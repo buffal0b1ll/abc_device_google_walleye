@@ -45,6 +45,13 @@ PRODUCT_MANUFACTURER := Google
 
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
+
     PRODUCT_NAME=walleye \
     BUILD_FINGERPRINT=google/walleye/walleye:9/PPR2.181005.003/4984323:user/release-keys \
     PRIVATE_BUILD_DESC="walleye-user 9 PPR2.181005.003 4984323 release-keys"
+
+    
+PRODUCT_COPY_FILES += \
+    device/google/walleye/prebuilt/substratum_key_1.0.apk:system/app/substratum_key_1.0.apk
+
+
