@@ -113,3 +113,9 @@ PRODUCT_COPY_FILES += \
 # Privileged app permissions
 PRODUCT_COPY_FILES += \
     device/google/walleye/privapp-permissions-walleye.xml:system/etc/permissions/privapp-permissions-walleye.xml
+    
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+ PRODUCT_BOOT_JARS += \
+    telephony-ext
