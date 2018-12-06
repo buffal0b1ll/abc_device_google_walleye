@@ -46,8 +46,8 @@ PRODUCT_MANUFACTURER := Google
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=walleye \
-    BUILD_FINGERPRINT=google/walleye/walleye:9/PQ1A.181105.017.A1/5081125:user/release-keys \
-    PRIVATE_BUILD_DESC="walleye-user 9 PQ1A.181105.017.A1 5081125 release-keys"
+    BUILD_FINGERPRINT=google/walleye/walleye:9/PQ1A.181205.002/5086253:user/release-keys \
+    PRIVATE_BUILD_DESC="walleye-user 9 PQ1A.181205.002 5086253 release-keys"
 
     
 PRODUCT_COPY_FILES += \
