@@ -30,8 +30,8 @@ PRODUCT_MANUFACTURER := Google
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=walleye \
-    BUILD_FINGERPRINT=google/walleye/walleye:9/PQ3A.190705.001/5565753:user/release-keys \
-    PRIVATE_BUILD_DESC="walleye-user 9 PQ3A.190705.001 5565753 release-keys"
+    BUILD_FINGERPRINT=google/walleye/walleye:9/PQ3A.190801.002/5670241:user/release-keys \
+    PRIVATE_BUILD_DESC="walleye-user 9 PQ3A.190801.002 5670241 release-keys"
 
 $(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
