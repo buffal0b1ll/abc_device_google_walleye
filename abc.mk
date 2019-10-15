@@ -1,4 +1,4 @@
-# Copyright (C) 2017 The Dirty Unicorns Project
+# Copyright (C) 2017-2019 The Dirty Unicorns Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Include DU common configuration
+include vendor/nexus/config/common_full_phone.mk
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-# Inherit AOSP device configuration for  taimen
+# Inherit AOSP device configuration for Walleye
 $(call inherit-product, device/google/walleye/aosp_walleye.mk)
-
 
 # Override AOSP build properties
 PRODUCT_NAME := abc_walleye
@@ -27,11 +29,15 @@ PRODUCT_BRAND := Google
 PRODUCT_MODEL := Pixel 2
 PRODUCT_MANUFACTURER := Google
 
-# Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=walleye \
-    BUILD_FINGERPRINT=google/walleye/walleye:9/PQ3A.190801.002/5670241:user/release-keys \
-    PRIVATE_BUILD_DESC="walleye-user 9 PQ3A.190801.002 5670241 release-keys"
+    PRODUCT_NAME="walleye" \
+    TARGET_DEVICE="walleye" \
+    PRIVATE_BUILD_DESC="walleye-user 10 QP1A.191005.007.A1 5908163 release-keys"
+
+BUILD_FINGERPRINT := "google/walleye/walleye:10/QP1A.191005.007.A1/5908163:user/release-keys"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=google/walleye/walleye:10/QP1A.191005.007.A1/5908163:user/release-keys
 
 $(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)

@@ -1,5 +1,5 @@
 #
-# Copyright 2017 The Android Open Source Project
+# Copyright 2016 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,10 +20,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 
 $(call inherit-product, device/google/walleye/device-walleye.mk)
-$(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor-walleye.mk)
 
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
+    #Dialer \
+    #Launcher3QuickStep \
+    #WallpaperPicker \
     vndk_package
 
 PRODUCT_COPY_FILES += \

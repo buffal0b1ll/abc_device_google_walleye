@@ -72,12 +72,61 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.insmod.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.cfg \
     $(LOCAL_PATH)/init.insmod_charger.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod_charger.cfg
 
-
 # Input device files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/synaptics_dsxv26.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/synaptics_dsxv26.idc
 
 include device/google/wahoo/device.mk
+
+# Kernel modules
+ifeq (,$(filter-out walleye_kasan, $(TARGET_PRODUCT)))
+# if TARGET_PRODUCT == *_kasan
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/kasan/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/kasan/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/kasan/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/kasan/htc_battery.ko \
+    device/google/wahoo-kernel/kasan/wlan.ko
+else ifeq (,$(filter-out walleye_kernel_debug_memory, $(TARGET_PRODUCT)))
+# if TARGET == walleye_kernel_debug_memory
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/debug_memory/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/debug_memory/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/debug_memory/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/debug_memory/htc_battery.ko \
+    device/google/wahoo-kernel/debug_memory/wlan.ko
+else ifeq (,$(filter-out walleye_kernel_debug_locking, $(TARGET_PRODUCT)))
+# if TARGET == walleye_kernel_debug_locking
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/debug_locking/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/debug_locking/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/debug_locking/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/debug_locking/htc_battery.ko \
+    device/google/wahoo-kernel/debug_locking/wlan.ko
+else ifeq (,$(filter-out walleye_kernel_debug_hang, $(TARGET_PRODUCT)))
+# if TARGET == walleye_kernel_debug_hang
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/debug_hang/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/debug_hang/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/debug_hang/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/debug_hang/htc_battery.ko \
+    device/google/wahoo-kernel/debug_hang/wlan.ko
+else ifeq (,$(filter-out walleye_kernel_debug_api, $(TARGET_PRODUCT)))
+# if TARGET == walleye_kernel_debug_api
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/debug_api/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/debug_api/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/debug_api/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/debug_api/htc_battery.ko \
+    device/google/wahoo-kernel/debug_api/wlan.ko
+else
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/htc_battery.ko \
+    device/google/wahoo-kernel/wlan.ko
+endif
 
 PRODUCT_COPY_FILES += \
     device/google/walleye/nfc/libnfc-nxp.muskie.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
@@ -85,6 +134,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/walleye/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
     device/google/walleye/thermal-engine-vr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-vr.conf
+
+PRODUCT_COPY_FILES += \
+    device/google/walleye/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Wifi configuration file
 PRODUCT_COPY_FILES += \
@@ -98,24 +150,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1
 
-# Video calling prop
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.vt_avail_ovr=1
-
-# ModemService
-PRODUCT_COPY_FILES += \
-  device/google/walleye/modemservice.xml:system/etc/sysconfig/modemservice.xml
-  
-# ModemService Whitelist
-PRODUCT_COPY_FILES += \
-  device/google/walleye/whitelist_modemservice.xml:system/etc/sysconfig/whitelist_modemservice.xml
-  
-# Privileged app permissions
-PRODUCT_COPY_FILES += \
-    device/google/walleye/privapp-permissions-walleye.xml:system/etc/permissions/privapp-permissions-walleye.xml
-    
-# Telephony
-#PRODUCT_PACKAGES += \
-#    telephony-ext
-# PRODUCT_BOOT_JARS += \
-#    telephony-ext
+PRODUCT_CHECK_ELF_FILES := true

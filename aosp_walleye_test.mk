@@ -1,3 +1,4 @@
+#
 # Copyright 2017 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,22 +12,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-#
-# Input Device Calibration File for the muskie touch screen.
 #
 
-device.internal = 1
+$(call inherit-product, device/google/muskie/aosp_walleye.mk)
 
-touch.deviceType = touchScreen
-touch.orientationAware = 1
-
-touch.size.calibration = diameter
-touch.size.scale = 42.086933
-touch.size.bias = -21.905636
-touch.size.isSummed = 0
-
-touch.pressure.calibration = amplitude
-touch.pressure.scale = 0.0125
-
-touch.orientation.calibration = none
+PRODUCT_NAME := aosp_walleye_test
