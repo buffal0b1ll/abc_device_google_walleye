@@ -32,9 +32,9 @@ PRODUCT_MANUFACTURER := Google
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="walleye" \
     TARGET_DEVICE="walleye" \
-    PRIVATE_BUILD_DESC="walleye-user 10 QP1A.191105.004 5908170 release-keys"
+    PRIVATE_BUILD_DESC="walleye-user 10 QP1A.191205.008 5974827 release-keys"
 
-BUILD_FINGERPRINT := "google/walleye/walleye:10/QP1A.191105.004/5908170:user/release-keys"
+BUILD_FINGERPRINT := "google/walleye/walleye:10/QQ1A.191205.008/5974827:user/release-keys"
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=google/walleye/walleye:10/QP1A.191105.004/5908170:user/release-keys
