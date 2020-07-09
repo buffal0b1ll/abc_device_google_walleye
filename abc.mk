@@ -25,13 +25,11 @@ $(call inherit-product, device/google/walleye/aosp_walleye.mk)
 # Override AOSP build properties
 PRODUCT_NAME := abc_walleye
 PRODUCT_DEVICE := walleye
-PRODUCT_BRAND := Google
+PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 2
-PRODUCT_MANUFACTURER := Google
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="walleye" \
-    TARGET_DEVICE="walleye" \
     PRIVATE_BUILD_DESC="walleye-user 10 QQ3A.200705.002 6506677 release-keys"
 
 BUILD_FINGERPRINT := "google/walleye/walleye:10/QQ3A.200705.002/6506677:user/release-keys"
